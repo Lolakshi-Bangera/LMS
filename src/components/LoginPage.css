@@ -1,0 +1,88 @@
+.login
+{
+    background-image:url("../../public/assets/IMG_0534.svg");
+    width:100%;
+    height: 650px;
+   
+
+}
+#one{
+    position: relative;
+   
+}
+#img-2{
+     position: absolute;
+     top: 80px;
+     bottom: 80px;
+     right: 80px;
+     left:280px;
+     width: 750px;
+     height: 525px;
+}
+#quote{
+    position: absolute;
+    top: 400px;
+    bottom: 40px;
+    right: 80px;
+    left:300px;
+    color: #FFFFFF;
+    font-family: Agrandir Variable;
+    font-size:Medium Wide;
+}
+.formDiv{
+    position: absolute;
+    top: 80px;
+    bottom: 49px;
+    right: 150px;
+    left:750px;
+    width:280px;
+    background-color: #383030a2;
+    color: #FFFFFF;
+}
+.heading{
+    color: #FFAA17  ;
+    text-align: center;
+    margin-bottom: 20px;
+}
+ .formAlign{
+    padding-left: 40px; 
+    color:white;
+   
+}
+
+#formItemButton{
+    border: 2px solid #FFAA17;
+    border-radius: 2px;
+    margin-top: 25px;
+   margin-left: 42px;
+    background-color: #FFAA17;
+    text-align: left;
+    color:white;
+    
+}
+#formItemInput{
+   width:160px;
+   border-radius: 5px;
+    
+}
+#formItemButtonCancel{
+   border-radius: 3px;
+    background-color: #000000A2;
+    text-align: right;
+    color:white;
+    border: 2px solid #FFAA17;
+} 
+
+
+
+ #imgLogo{
+    padding-left: 40px;
+    padding-right:20px;
+    padding-top: 50px;
+    padding-bottom :40px;
+}  
+#copy{
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size:9px; 
+}

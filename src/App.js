@@ -32,19 +32,20 @@ function App() {
   return (
    
       <div className="App">
-         <BrowserRouter>
+       
+       <BrowserRouter>
+        
         <Routes>
-          
           <Route path="/" element={<LoginPage />} />
           <Route path="/admin/*" element={<AdminPage />} />
-          {/* <Route path="/mentor/*" element={<MentorPage />} />
-          <Route path="/employee/*" element={<Registration />} /> */}
+          <Route path="/mentor/*" element={<MentorPage />} />
+          <Route path="/employee/*" element={<Registration />} />
         </Routes>
 
         {/* {state?<DataComponent setState={setState}/>:<DataComponet2 setState={setState}/>} */}
         </BrowserRouter>
       </div>
-    
+      
   );
 }
 

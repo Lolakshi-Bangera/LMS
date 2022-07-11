@@ -36,31 +36,38 @@ let handleLogout=()=>{
     <div>
        <Space direction="vertical" size="middle" style={{ display: "flex" }}>
       <Layout>
-        <Header style={{ background: "#FFFFFF" }}>
-         
+        <Header style={{ background: "#FFFFFF" }} id="headerBar">
+          <div className="d-flex">
+        <div>
           <img
             src="./assets/logo1@2x.png"
             alt="logo"
             height="50px"
             width="160px"
+            className="p-2 justify-center"
             
-          ></img>
+          />
+          </div>
+          <div>
           <Button
             icon={<SearchOutlined/>}
             size="large"
             style={{
-              marginLeft: "250px",
+              marginBottom:"0px",
+              marginLeft:"350px",
               background: "#0000000A",
-              width: "450px",
-             
-              
+              width:"350px"
             }}
           >
             Search Mentor/Employee
           </Button>
-          <Button type="primary"  onClick={handleLogout} ghost style={{ marginLeft: "300px" }}>
+          </div>
+          <div>
+          <Button type="primary"  onClick={handleLogout} ghost style={{marginLeft:"350px"}}>
             Logout
           </Button>
+          </div>
+          </div>
         </Header>
         
         <Layout>

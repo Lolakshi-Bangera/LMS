@@ -2,7 +2,6 @@ import React from "react";
 import "./LoginPage.css";
 import { Button, Form, Input } from "antd";
 import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom';
 import { useState } from "react";
 
 
@@ -24,9 +23,20 @@ function LoginPage() {
   let navigate=useNavigate()
   
  const handleLogin=()=>{
-  console.log(`Employee Data Employee Id:${employeeData.employeeId} Password:${employeeData.password}`)
+  // console.log(`Employee Data Employee Id:${employeeData.employeeId} Password:${employeeData.password}`)
+  if(employeeData.employeeId==="Admin"&&employeeData.password==="admin"){
+    navigate('/admin')
+  }
+  else if(employeeData.employeeId==="Mentor"&&employeeData.password==="mentor"){
+    navigate('/mentor')
+  }
+  else if(employeeData.employeeId==="Employee"&&employeeData.password==="employee"){
+navigate('/employee')
+  }
+  else{
+    navigate('/')
+  }
   
-  navigate('/admin')
  }
  let handleSubmit=(e)=>{
   e.preventDefault() 

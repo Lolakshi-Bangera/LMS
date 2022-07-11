@@ -5,31 +5,32 @@ import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import { useState } from "react";
 
+
 function LoginPage() {
+  const [employeeData, setEmployeeData] = useState({
+    employeeId:'',
+    password:''
+  })
+ 
+
+  const updateUserData=(event)=>{
+    setEmployeeData({
+       ...employeeData,
+        [event.target.name]:event.target.value,
+        
+    });
+};
+
   let navigate=useNavigate()
-  let navigteToAdmin=()=>{
-    navigate("/admin")
+  
+ const handleLogin=()=>{
+  console.log(`Employee Data Employee Id:${employeeData.employeeId} Password:${employeeData.password}`)
+  
+  navigate('/admin/')
+ }
+ let handleSubmit=(e)=>{
+  e.preventDefault() 
 }
-  let navigteToMentor=()=>{
-    navigate("/mentor")
-}
-  let navigteToRequest=()=>{
-    navigate("/employee")
-  }
-  const [employeeID, setEmployeeID] = useState([
-    {email:"admin@gmail.com",
-    password:"admin",
-  },
-  {
-    email:"mentor@gmail.com",
-    password:"mentor"
-  },
-  {
-    email:"employee@gmail.com",
-    password:"employee"
-  }
-  ]
-  )
   return (
     <div>
       <div className="login">
@@ -62,6 +63,7 @@ function LoginPage() {
         ></img>
         <h3 className="heading">Login</h3>
         <Form
+        onSubmit={handleSubmit}
           layout="vertical"
           style={{ marginBottom: "80px" }}
           className="form"
@@ -83,7 +85,7 @@ function LoginPage() {
             requiredMark="optional"
             rules={[{ required: true, message: "Please input your username!" }]}
           >
-            <Input id="formItemInput" />
+            <Input   name="employeeId" onChange={(event)=>{updateUserData(event)}} value={employeeData.employeeId} id="formItemInput" />
           </Form.Item>
 
           <Form.Item
@@ -98,11 +100,11 @@ function LoginPage() {
             requiredMark="optional"
             rules={[{ required: true, message: "Please input your password!" }]}
           >
-            <Input.Password id="formItemInput" placeholder="Enter Password" />
+            <Input.Password  name="password" onChange={(event)=>{updateUserData(event)}} value={employeeData.password} id="formItemInput" placeholder="Enter Password" />
           </Form.Item>
 
           <Form.Item className="formItem">
-            <Button htmlType="submit" id="formItemButton">
+            <Button htmlType="submit" id="formItemButton" onClick={handleLogin} >
               Login
             </Button>
             <Button htmlType="button" id="formItemButtonCancel">

@@ -30,20 +30,21 @@ function App() {
   // console.log("========");
 
   return (
-    <BrowserRouter>
+   
       <div className="App">
-        <LoginPage />
-
+         <BrowserRouter>
         <Routes>
+          
           <Route path="/" element={<LoginPage />} />
-          <Route path="/admin/" element={<AdminPage />} />
-          <Route path="/mentor/" element={<MentorPage />} />
-          <Route path="/employee/" element={<Registration />} />
+          <Route path="/admin/*" element={<AdminPage />} />
+          {/* <Route path="/mentor/*" element={<MentorPage />} />
+          <Route path="/employee/*" element={<Registration />} /> */}
         </Routes>
 
         {/* {state?<DataComponent setState={setState}/>:<DataComponet2 setState={setState}/>} */}
+        </BrowserRouter>
       </div>
-    </BrowserRouter>
+    
   );
 }
 

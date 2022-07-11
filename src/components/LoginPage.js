@@ -26,7 +26,7 @@ function LoginPage() {
  const handleLogin=()=>{
   console.log(`Employee Data Employee Id:${employeeData.employeeId} Password:${employeeData.password}`)
   
-  navigate('/admin/')
+  navigate('/admin')
  }
  let handleSubmit=(e)=>{
   e.preventDefault() 
@@ -107,7 +107,7 @@ function LoginPage() {
             <Button htmlType="submit" id="formItemButton" onClick={handleLogin} >
               Login
             </Button>
-            <Button htmlType="button" id="formItemButtonCancel">
+            <Button htmlType="button" id="formItemButtonCancel" >
               Cancel
             </Button>
           </Form.Item>

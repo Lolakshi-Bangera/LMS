@@ -19,13 +19,17 @@ const { Search } = Input;
 function AdminPage() {
   let navigate=useNavigate()
   let navigteToBatchList=()=>{
-    navigate("/admin/batchlist")
+    navigate("batchlist")
 }
   let navigteToMentorList=()=>{
-    navigate("/admin/mentorlist")
+    navigate("mentorlist")
 }
   let navigteToRequestList=()=>{
-    navigate("/admin/requestlist")
+    navigate("requestlist")
+}
+
+let handleLogout=()=>{
+  navigate('/')
 }
   return (
 
@@ -54,7 +58,7 @@ function AdminPage() {
           >
             Search Mentor/Employee
           </Button>
-          <Button type="primary" ghost style={{ marginLeft: "300px" }}>
+          <Button type="primary"  onClick={handleLogout} ghost style={{ marginLeft: "300px" }}>
             Logout
           </Button>
         </Header>
@@ -101,9 +105,9 @@ function AdminPage() {
                 }}
               >
                 <Routes>
-                <Route path='/admin/batchlist' element={<BatchList/>}/>
-                <Route path='/admin/mentorlist' element={<MentorList/>}/>
-                <Route path='/admin/requestlist' element={<RequestList/>}/>
+                <Route path='batchlist' element={<BatchList/>}/>
+                <Route path='mentorlist' element={<MentorList/>}/>
+                <Route path='requestlist' element={<RequestList/>}/>
                 </Routes>
                 
               </Content>

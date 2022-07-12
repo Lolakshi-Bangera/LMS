@@ -10,6 +10,7 @@ import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import MentorListTable from '../../Molecule/MentorListTable';
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const { Header, Content } = Layout;
 
@@ -98,7 +99,8 @@ function MentorList() {
         }}
       >
         <div>
-          <Table  hover>
+          <MentorListTable/>
+          {/* <Table  hover>
             <thead class="table-active">
               <tr>
                 <th>
@@ -139,7 +141,7 @@ function MentorList() {
                 </td>
               </tr>
             </tbody>
-          </Table>
+          </Table> */}
         </div>
       </Content>
     </div>

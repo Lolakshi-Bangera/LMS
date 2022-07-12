@@ -10,6 +10,7 @@ import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import BatchListTable from "../../Molecule/BatchListTable";
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
@@ -104,8 +105,8 @@ function BatchList() {
           background: "#FFFFFF",
         }}
       >
-        
-          <Table  hover >
+        <BatchListTable/>
+          {/* <Table  hover >
             <thead className="table-active">
               <tr>
                 <th>
@@ -148,7 +149,7 @@ function BatchList() {
                 </td>
               </tr>
             </tbody>
-          </Table>
+          </Table> */}
         
       </Content>
     </Layout>

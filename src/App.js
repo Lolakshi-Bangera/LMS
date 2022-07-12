@@ -8,6 +8,8 @@ import Registration from "./components/Employee/Registration";
 // import DataComponent from './components/DataComponent';
 // import DataComponet2 from './components/DataComponet2';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Employee from "./components/Employee/Employee";
+
 
 // (function AppTw() {
 
@@ -39,11 +41,11 @@ function App() {
           <Route path="/" element={<LoginPage />} />
           <Route path="/admin/*" element={<AdminPage />} />
           <Route path="/mentor/*" element={<MentorPage />} />
-          <Route path="/employee/*" element={<Registration />} />
+          <Route path="/employee/*" element={<Employee />} />
         </Routes>
-
-        {/* {state?<DataComponent setState={setState}/>:<DataComponet2 setState={setState}/>} */}
-        </BrowserRouter>
+        </BrowserRouter> 
+         {/* state?<DataComponent setState={setState}/>:<DataComponet2 setState={setState}/> */}
+       
       </div>
       
   );

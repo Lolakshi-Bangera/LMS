@@ -5,6 +5,7 @@ import { Form, Table } from "react-bootstrap";
 import {  Modal, Space } from 'antd';
 import { useState } from 'react';
 import { Checkbox } from '@mui/material';
+import RequestListTable from '../../Molecule/RequestListTable';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const { Header, Content } = Layout;
@@ -127,7 +128,8 @@ function RequestList() {
         }}
       >
         <div>
-          <Table  hover>
+          <RequestListTable/>
+          {/* <Table  hover>
             <thead class="table-active">
               <tr>
                 <th>
@@ -164,7 +166,7 @@ function RequestList() {
                
               </tr>
             </tbody>
-          </Table>
+          </Table> */}
         </div>
       </Content>
      

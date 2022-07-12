@@ -104,7 +104,7 @@ function EmployeeListMentor() {
       >
         <div>
           <Table striped bordered hover>
-            <thead>
+            <thead className="table-active">
               <tr>
                 <th>
                 <Checkbox {...label} />
@@ -122,7 +122,7 @@ function EmployeeListMentor() {
                 <th>Status</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody  className="table-default">
               <tr>
                 <td>
                 <Checkbox {...label} />

@@ -8,92 +8,64 @@ import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Menu } from "antd";
 import BatchListMentor from "./BatchListMentor";
 import EmployeeListMentor from "./EmployeeListMentor";
+import {  Route, Routes, useNavigate } from "react-router-dom";
+import PasswordModal from "./PasswordModal";
+import ResetPasswordModal from "./ResetPasswordModal";
+import BreadCrumb from "../../atom/BreadCrumb";
 
 
 const { Header, Sider, Content } = Layout;
 const { Search } = Input;
 const menu = (
   <Menu
+  
     items={[
       {
         label: <a  style={{textDecoration:"none"}}href="https://www.antgroup.com">Profile</a>,
         key: "0",
       },
       {
-        label: <a style={{textDecoration:"none"}}href="https://www.antgroup.com"> Change Password</a> ,
+        label: <PasswordModal  />,
         key: "1",
       },
       {
         type: "divider",
       },
       {
-        label: "Logout",
+        label: <a  style={{textDecoration:"none"}} href="/"> Logout</a>,
         key: "3",
       },
     ]}
   />
 );
-const LocalizedModal = () => {
-  const [visible, setVisible] = useState(false);
 
-  const showModal = () => {
-    setVisible(true);
-  };
-
-  const hideModal = () => {
-    setVisible(false);
-  };
-
-  return (
-    <>
-      <Button type="primary" onClick={showModal}>
-        Change Password
-      </Button>
-      <Modal
-        title="Change status"
-        visible={visible}
-        onOk={hideModal}
-        onCancel={hideModal}
-        okText="Submit"
-        cancelText="Cancel"
-      >
-       <Form>
-  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-    <Form.Label>Batch Name</Form.Label>
-    <Form.Select aria-label="Default select example">
-  <option> </option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</Form.Select>
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-    <Form.Label>Batch ID</Form.Label>
-    <Form.Select aria-label="Default select example">
-  <option> </option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-</Form.Select>
-  </Form.Group>
-</Form>
-      </Modal>
-    </>
-  );
-};
 
 function MentorPage() {
+  const [show,setShow] = useState(false)
+  const handleClose=()=>setShow(false)
+  let navigate=useNavigate()
+  let navigteToBatch=()=>{
+    navigate('batchlistmentor')
+}
+  let navigteToMentor=()=>{
+    navigate('employeelistmentor')
+}
+
   return (
     <div>
       <Space direction="vertical" size="middle" style={{ display: "flex" }}>
         <Layout>
           <Header style={{ background: "#FFFFFF" }}>
+          <div className="d-flex">
+            <div>
             <img
               src="./assets/logo1@2x.png"
               alt="logo"
               height="50px"
               width="160px"
             ></img>
+            </div>
+            <div>
             <Button
               icon={<SearchOutlined />}
               size="large"
@@ -105,18 +77,22 @@ function MentorPage() {
             >
               Search Mentor/Employee
             </Button>
-            <span style={{marginLeft:'200px'}}>
+            </div>
+            <div style={{marginLeft:'200px'}}>
+           
             
             <Dropdown overlay={menu} trigger={["click"]}>
-              <a  style={{textDecoration:"none",color:"black"}} onClick={(e) => e.preventDefault()}>
+              <button onClick={(e) => e.preventDefault()} style={{textDecoration:"none",color:"black"}} >
                 <Space>
                 <Avatar src="./assets/Avatar@2x.png" />
                   Shalini
                   <DownOutlined />
                 </Space>
-              </a>
+              </button>
             </Dropdown>
-            </span>
+            
+            </div>
+            </div>
           </Header>
 
           <Layout>
@@ -125,6 +101,7 @@ function MentorPage() {
               style={{ background: "#FFFFFF", marginTop: "2px" }}
             >
               <Card
+              onClick={navigteToBatch}
                 style={{
                   width: "2.5rem",
                   marginLeft: "15px",
@@ -140,6 +117,7 @@ function MentorPage() {
                 </p>
               </Card>
               <Card
+              onClick={navigteToMentor}
                 style={{
                   width: "2.5rem",
                   marginLeft: "15px",
@@ -156,12 +134,7 @@ function MentorPage() {
             </Sider>
 
             <Layout>
-              <Breadcrumb separator=">" style={{ margin: "7px 28px" }}>
-                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>
-                  <a href="">Batch</a>
-                </Breadcrumb.Item>
-              </Breadcrumb>
+            <BreadCrumb/>
               <Content
                 className="site-layout-background"
                 style={{
@@ -171,8 +144,12 @@ function MentorPage() {
                   background: "#FFFFFF",
                 }}
               >
-               < BatchListMentor/>
-               <EmployeeListMentor/>
+                <ResetPasswordModal setShow={setShow} handleClose={handleClose}/>
+                <Routes>
+               <Route path='batchlistmentor' element={< BatchListMentor/>}/>
+               <Route path='employeelistmentor' element={<EmployeeListMentor/>}/>
+                </Routes>
+               
               </Content>
             </Layout>
           </Layout>

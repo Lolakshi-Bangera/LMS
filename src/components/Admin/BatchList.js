@@ -106,7 +106,7 @@ function BatchList() {
       >
         
           <Table  hover >
-            <thead class="table-active">
+            <thead className="table-active">
               <tr>
                 <th>
                 <Checkbox {...label} />

@@ -2,7 +2,7 @@ import React from "react";
 import { Breadcrumb, Layout, Menu, Space } from "antd";
 import { Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import { Button, Tooltip } from "antd";
+import { Button } from "antd";
 import { Card } from "react-bootstrap";
 import MentorList from "./MentorList";
 import RequestList from "./RequestList";
@@ -11,12 +11,17 @@ import { Route, Routes } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
 
 import BreadCrumb from "../../../src/atom/BreadCrumb.js";
+
+import { useState } from "react";
+import ResetPasswordModal from "../Mentor/ResetPasswordModal";
 const { Header,  Sider, Content } = Layout;
 const { Search } = Input;
 
 
 
 function AdminPage() {
+  const [show,setShow] = useState(false)
+  const handleClose=()=>setShow(false)
   let navigate=useNavigate()
   let navigteToBatchList=()=>{
     navigate("batchlist")
@@ -111,6 +116,7 @@ let handleLogout=()=>{
                   background: "#FFFFFF",
                 }}
               >
+                <ResetPasswordModal setShow={setShow} handleClose={handleClose}/>
                 <Routes>
                 <Route path='batchlist' element={<BatchList/>}/>
                 <Route path='mentorlist' element={<MentorList/>}/>

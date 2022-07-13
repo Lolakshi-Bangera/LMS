@@ -12,6 +12,7 @@ import {  Route, Routes, useNavigate } from "react-router-dom";
 import PasswordModal from "./PasswordModal";
 import ResetPasswordModal from "./ResetPasswordModal";
 import BreadCrumb from "../../atom/BreadCrumb";
+import Dashboard from "./Dashboard";
 
 
 const { Header, Sider, Content } = Layout;
@@ -44,6 +45,9 @@ function MentorPage() {
   let navigate=useNavigate()
   let navigteToBatch=()=>{
     navigate('batchlistmentor')
+}
+  let navigteToDashboard=()=>{
+    navigate('dashboard')
 }
   let navigteToMentor=()=>{
     navigate('employeelistmentor')
@@ -99,7 +103,7 @@ function MentorPage() {
               style={{ background: "#FFFFFF", marginTop: "2px" }}
             >
               <Card
-              
+              onClick={navigteToDashboard}
                 style={{
                   width: "2.5rem",
                   marginLeft: "15px",
@@ -144,6 +148,7 @@ function MentorPage() {
               >
                 <ResetPasswordModal setShow={setShow} handleClose={handleClose}/>
                 <Routes>
+               <Route path='dashboard' element={< Dashboard/>}/>
                <Route path='batchlistmentor' element={< BatchListMentor/>}/>
                <Route path='employeelistmentor' element={<EmployeeListMentor/>}/>
                 </Routes>

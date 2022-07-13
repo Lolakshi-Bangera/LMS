@@ -28,9 +28,7 @@ const menu = (
         label: <PasswordModal/>,
         key: "1",
       },
-      {
-        type: "divider",
-      },
+      
       {
         label: <a  style={{textDecoration:"none"}} href="/"> Logout</a>,
         key: "3",

@@ -10,6 +10,7 @@ import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import EmployeeTable from '../../Molecule/Mentor/EmployeeTable';
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const { Header, Content } = Layout;
 
@@ -103,7 +104,8 @@ function EmployeeListMentor() {
         }}
       >
         <div>
-          <Table striped bordered hover>
+          <EmployeeTable/>
+          {/* <Table striped bordered hover>
             <thead className="table-active">
               <tr>
                 <th>
@@ -147,7 +149,7 @@ function EmployeeListMentor() {
                 <td>   </td>
               </tr>
             </tbody>
-          </Table>
+          </Table> */}
         </div>
       </Content>
     </div>

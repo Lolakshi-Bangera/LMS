@@ -19,9 +19,9 @@ const PasswordModal = () => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
+      <p onClick={showModal}>
        Change Password
-      </Button>
+      </p>
       <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
         <p>Some contents...</p>
         <p>Some contents...</p>

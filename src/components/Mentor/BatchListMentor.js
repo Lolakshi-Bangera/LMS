@@ -3,6 +3,7 @@ import { Layout, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { Table } from "react-bootstrap";
 import { Checkbox } from '@mui/material';
+import BatchTable from '../../Molecule/Mentor/BatchTable';
 
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -40,7 +41,8 @@ function BatchListMentor() {
         }}
       >
         <div>
-          <Table bordered hover >
+          <BatchTable/>
+          {/* <Table bordered hover >
             <thead class="table-active">
               <tr>
                 <th>
@@ -74,7 +76,7 @@ function BatchListMentor() {
                
               </tr>
             </tbody>
-          </Table>
+          </Table> */}
         </div>
       </Content> 
     </div>

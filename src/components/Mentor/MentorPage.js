@@ -28,9 +28,7 @@ const menu = (
         label: <PasswordModal  />,
         key: "1",
       },
-      {
-        type: "divider",
-      },
+      
       {
         label: <a  style={{textDecoration:"none"}} href="/"> Logout</a>,
         key: "3",
@@ -101,7 +99,7 @@ function MentorPage() {
               style={{ background: "#FFFFFF", marginTop: "2px" }}
             >
               <Card
-              onClick={navigteToBatch}
+              
                 style={{
                   width: "2.5rem",
                   marginLeft: "15px",
@@ -112,12 +110,12 @@ function MentorPage() {
               >
                 <Card.Img variant="top" src="./assets/dashboard (3)@2x.png" />
 
-                <p style={{ padding: "0px", margin: "0px", fontSize: "10px" }}>
-                  Batch
+                <p style={{ padding: "0px", margin: "0px", fontSize: "8px" }}>
+                  Dashboard
                 </p>
               </Card>
               <Card
-              onClick={navigteToMentor}
+              onClick={navigteToBatch}
                 style={{
                   width: "2.5rem",
                   marginLeft: "15px",
@@ -128,7 +126,7 @@ function MentorPage() {
                 <Card.Img variant="top" src="./assets/group (1)@2x.png" />
 
                 <p style={{ padding: "0px", margin: "0px", fontSize: "10px" }}>
-                  Mentor
+                  Batch
                 </p>
               </Card>
             </Sider>
